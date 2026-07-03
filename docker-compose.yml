@@ -1,0 +1,15 @@
+services:
+  postgres_db:
+    image: postgres:15-alpine
+    container_name: rnm_postgres_container
+    environment:
+      POSTGRES_USER: gbrl014
+      POSTGRES_PASSWORD: gbrl014
+      POSTGRES_DB: rnm_dw
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
